@@ -62,3 +62,14 @@ def main():
       print("Lựa chọn không hợp lệ.")
 if __name__ == "__main__":
   main()
+def view_inventory():
+    """
+    In ra thông tin tất cả sản phẩm trong kho.
+    """
+    if not products:
+        print("Kho đang trống!")
+        return
+
+    print("Danh sách sản phẩm trong kho:")
+    for i, product in enumerate(products, start=1):
+        print(f"{i}. Tên: {product['name']}, Giá: {product['price']}, Số lượng: {product['qty']}")
