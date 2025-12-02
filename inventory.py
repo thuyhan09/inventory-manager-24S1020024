@@ -1,6 +1,32 @@
 # Biến lưu trữ dữ liệu: Mỗi sản phẩm là một dict {'name': '...', 'price': 0, 'qty': 0}
 products = []
 
+
+def add_product(name, price, quantity):
+    """
+    Thêm sản phẩm mới vào danh sách products.
+
+    Args:
+        name (str): Tên sản phẩm
+        price (float/int): Giá bán sản phẩm
+        quantity (int): Số lượng tồn kho
+    """
+    product = {
+        'name': name,
+        'price': price,
+        'qty': quantity
+    }
+    products.append(product)
+    print(f"Đã thêm sản phẩm: {product}")
+
+# Ví dụ sử dụng
+add_product("Mì tôm", 5000, 100)
+add_product("Bánh mì", 12000, 50)
+
+# In ra danh sách hiện tại
+print(products)
+
+
 def add_product():
   # Nhập tên, giá, số lượng -> append vào products
   print("Đã nhập hàng thành công.")
