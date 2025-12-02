@@ -73,3 +73,16 @@ def view_inventory():
     print("Danh sách sản phẩm trong kho:")
     for i, product in enumerate(products, start=1):
         print(f"{i}. Tên: {product['name']}, Giá: {product['price']}, Số lượng: {product['qty']}")
+def check_low_stock():
+    """
+    Kiểm tra các sản phẩm có số lượng dưới 5 và in ra cảnh báo.
+    """
+    low_stock_items = [p for p in products if p['qty'] < 5]
+
+    if not low_stock_items:
+        print("Không có sản phẩm nào sắp hết hàng.")
+        return
+
+    print("⚠️ Sản phẩm sắp hết hàng:")
+    for product in low_stock_items:
+        print(f"- Tên: {product['name']}, Số lượng: {product['qty']}")
